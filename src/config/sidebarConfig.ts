@@ -174,7 +174,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			hideOnNonPostPage: true,
 		},
 		{
-			// 组件类型：广告栏组件 1
+			// 组件类型：广告栏组件（备用位，保持关闭）
 			type: "advertisement",
 			// 是否启用该组件
 			enable: false,
@@ -187,28 +187,20 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件专属配置（广告内容直接在此配置）
 			specificConfig: {
 				ad: {
-					image: {
-						src: "/assets/images/ad/ad1.webp",
-						alt: "广告横幅",
-						link: "https://haoka.lot-ml.com/plugreg.html?agentid=1423316",
-						external: true,
-					},
-					// 是否允许关闭广告
+					// 预留位：需要时填写 title/content/image/link 并启用
 					closable: false,
 					// 显示次数限制，-1为无限制
 					displayCount: -1,
-					// 组件内边距配置
-					padding: {
-						all: "1rem",
-					},
 				},
 			},
 		},
 		{
-			// 组件类型：广告栏组件 2
+			// 组件类型：广告栏组件
 			type: "advertisement",
-			// 是否启用该组件
+			// 是否启用该组件（配置单第99行"广告不开启"，保持关闭；文案已备好，改 true 即显示）
 			enable: false,
+			// 是否显示组件标题
+			showTitle: false,
 			// 组件位置
 			position: "sticky",
 			// 是否在文章详情页显示
@@ -216,15 +208,17 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件专属配置（广告内容直接在此配置）
 			specificConfig: {
 				ad: {
-					title: "支持博主",
+					title: "Pointers-BOX",
 					content:
-						"如果您觉得本站内容对您有帮助，欢迎支持我们的创作！您的支持是我们持续更新的动力。",
+						"所有资源由作者亲自测试，无任何风险且完全免费，请放心使用，祝大家资源自由，天天开心。",
 					link: {
-						text: "支持一下",
-						url: "about/",
-						external: false,
+						text: "官方QQ社区群",
+						url: "https://qm.qq.com/q/DGf5XI9jgW",
+						external: true,
 					},
+					// 是否允许关闭广告
 					closable: false,
+					// 显示次数限制，-1为无限制
 					displayCount: -1,
 				},
 			},

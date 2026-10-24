@@ -11,7 +11,7 @@ const pages = resolvePageToggles({
 	// ── 社交 (Social) ──────────────────────────────────
 
 	// 友链页面开关
-	friends: true,
+	friends: false,
 	// 留言板页面开关，需要配置评论系统
 	guestbook: true,
 
@@ -22,9 +22,9 @@ const pages = resolvePageToggles({
 	// 项目展示页开关
 	projects: true,
 	// 相册页面开关
-	gallery: true,
+	gallery: false,
 	// 书签导航页面开关
-	booknav: true,
+	booknav: false,
 	// 哔哩哔哩追番页面开关
 	bilibili: false,
 	// 番组计划页面开关
@@ -37,40 +37,32 @@ const pages = resolvePageToggles({
 	// ── 关于 (About) ──────────────────────────────────
 
 	// 打赏页面开关
-	sponsor: true,
+	sponsor: false,
 });
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "Pointers-BOX",
 
 	// 站点副标题
-	subtitle: "Demo site",
+	subtitle: "Pointers-BOX官方网站",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://www.pointers-box.cc.cd",
 
 	// 站点描述
-	description:
-		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+	description: "独立开发者极星Pointers的资源分享平台",
 
 	// 站点关键词
-	keywords: [
-		"Firefly",
-		"Fuwari",
-		"Astro",
-		"ACGN",
-		"博客",
-		"技术博客",
-		"静态博客",
-	],
+	keywords: ["Pointers"],
 
 	// 主题色
 	themeColor: {
-		// 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		hue: 165,
+		// 主题色的默认色相，范围从 0 到 360。#9400D3（紫）对应色相约 282
+		hue: 282,
 		// 默认模式："light" 亮色，"dark" 暗色，"system" 跟随系统
-		defaultMode: "system",
+		// 紫金黑主题：默认暗色（黑底）
+		defaultMode: "dark",
 	},
 
 	// 页面整体宽度（单位：rem）
@@ -91,39 +83,45 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		{
 			// 图标文件路径
-			src: "/favicon/firefly-32.png",
-			// 可选，指定主题 'light' | 'dark'
-			// theme: "light",
-			// 可选，图标大小
-			// sizes: "32x32",
+			src: "/favicon/pointers-32.png",
+			theme: "light",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/pointers-32.png",
+			theme: "dark",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/pointers-128.png",
+			sizes: "128x128",
+		},
+		{
+			src: "/favicon/pointers-180.png",
+			sizes: "180x180",
+		},
+		{
+			src: "/favicon/pointers-192.png",
+			sizes: "192x192",
 		},
 	],
 
 	// 导航栏配置
 	navbar: {
 		// 导航栏Logo
-		// 支持三种类型：
-		// 1. Astro图标库: { type: "icon", value: "material-symbols:home-pin-outline" }
-		// 2. 本地图片（public目录，不优化）: { type: "image", value: "/assets/images/logo.webp", alt: "Logo" }
-		// 3. 本地图片（src目录，自动优化但会增加构建时间）: { type: "image", value: "assets/images/logo.webp", alt: "Logo" }
-		// 4. 网络图片: { type: "url", value: "https://example.com/logo.png", alt: "Logo" }
-		// image 和 url 类型可额外设置 valueDark，用于暗色模式下显示另一张图片，不设置则亮暗色共用 value
-		// 例如: { type: "image", value: "assets/images/logo.png", valueDark: "assets/images/logo-dark.png", alt: "Logo" }
-		// 使用 Astro 图标库时不需要设置 valueDark，图标会自动跟随主题亮暗色切换
 		logo: {
 			type: "image",
-			value: "assets/images/logo/firefly-light.png",
-			valueDark: "assets/images/logo/firefly-dark.png",
-			alt: "🍀",
+			value: "/assets/images/logo/pointers-box.png",
+			alt: "Pointers-BOX",
 		},
 		// 导航栏标题
-		title: "Firefly Blog",
+		title: "Pointers-BOX",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中
 		menuAlign: "center",
 		// 导航栏图标和标题是否跟随主题色
-		followTheme: false,
+		followTheme: true,
 		// 导航栏模式navbarMode：
 		// "static"：不固定，随页面滚动消失
 		// "fixed"：固定在顶部常显
@@ -146,7 +144,7 @@ export const siteConfig: SiteConfig = {
 	// 分类导航栏按钮样式
 	// "pill"：胶囊，主题色浅底圆角
 	// "rectangle"：矩形，配色同胶囊，仅圆角更小
-	categoryStyle: "rectangle",
+	categoryStyle: "pill",
 
 	// 标签样式，作用于文章列表底部标签、标签页和侧边栏标签
 	// "pill"：胶囊，主题色底圆角
@@ -162,18 +160,18 @@ export const siteConfig: SiteConfig = {
 		// 默认布局模式："list" 列表模式（单列布局），"grid" 网格模式（多列布局）
 		defaultMode: "list",
 		// 移动端默认布局模式，不设置则跟随 defaultMode
-		mobileDefaultMode: "grid",
+		mobileDefaultMode: "list",
 		// 列表模式下封面图显示在哪一侧："right" 右侧，"left" 左侧
 		// 网格模式的封面固定在卡片顶部，不受此项影响
-		coverPosition: "right",
+		coverPosition: "left",
 		// 文章简介显示行数，设为 0 则不截断
-		descriptionLines: 2,
+		descriptionLines: 0,
 		// 文章卡片底部统计和发布日期是否显示图标
 		showStatsIcons: true,
 		// 标签显示位置
 		// 设置为"meta"：显示在文章标题下的元数据
 		// 设置为"bottom"：顶替stats在底部显示
-		tagsPosition: "bottom",
+		tagsPosition: "meta",
 		// 底部标签样式，仅在 tagsPosition 为 "bottom" 时生效
 		// "chip"：按钮样式，形状跟随上方的 tagStyle 配置
 		// "text"：无底色，只有文字
@@ -187,11 +185,11 @@ export const siteConfig: SiteConfig = {
 			// 是否显示标签
 			showTags: true,
 			// 标签数量，设为 0 则不限制
-			tagCount: 3,
+			tagCount: 0,
 			// 是否显示字数
-			showWords: false,
+			showWords: true,
 			// 是否显示阅读时间
-			showReadingTime: false,
+			showReadingTime: true,
 		},
 		// 底部 PostStats 统计信息显示控制
 		// 如果tagsPosition设置为"bottom"，则stats将不显示
@@ -206,7 +204,7 @@ export const siteConfig: SiteConfig = {
 		// 网格布局配置，仅在 defaultMode 为 "grid" 或允许切换布局时生效
 		grid: {
 			// 是否开启瀑布流布局，同时有封面图和无封面图的混合文章推荐开启
-			masonry: false,
+			masonry: true,
 			// 网格模式卡片最小宽度(px)，浏览器根据容器宽度自动计算列数
 			columnWidth: 320,
 			// 网格模式封面是否撑满卡片贴边
@@ -235,15 +233,15 @@ export const siteConfig: SiteConfig = {
 		// 文章页底部的"上次编辑时间"卡片开关
 		showLastModified: true,
 		// 文章过期阈值（天数），超过此天数才显示"上次编辑"卡片
-		outdatedThreshold: 30,
+		outdatedThreshold: 3,
 		// 是否显示文章页的分享按钮
 		share: true,
 		// 是否显示上一篇/下一篇文章导航
-		postNavigation: true,
+		postNavigation: false,
 		// 是否显示相关文章推荐
-		relatedPosts: true,
+		relatedPosts: false,
 		// 是否显示随机文章推荐
-		randomPosts: true,
+		randomPosts: false,
 		// OpenGraph图片功能，注意开启后要渲染很长时间，不建议本地调试的时候开启
 		generateOgImages: true,
 		// 沉浸阅读配置：电脑端文章详情页右下角按钮，进入后只留文章卡片+左侧目录
@@ -312,7 +310,7 @@ export const siteConfig: SiteConfig = {
 	// ── MyAnimeList配置 ──────────────────────────────────
 	mal: {
 		// MyAnimeList 用户名（列表需为公开状态，私密列表无法读取）
-		username: "cuteleaf",
+		username: "",
 		// MyAnimeList Client ID，在 https://myanimelist.net/apiconfig 注册免费应用后获取
 		clientId: "	0ef34371450f9c6c809deaadec6aa8f3",
 		// MAL API 地址

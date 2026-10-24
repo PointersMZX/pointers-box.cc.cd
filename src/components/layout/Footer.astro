@@ -40,8 +40,8 @@ try {
 				{customFooterHtml && <div set:html={customFooterHtml} />}
 			</div>
 			<div class="mx-0.5 my-2.5 flex gap-x-2 gap-y-2.5 justify-center flex-wrap">
-				&copy; <span id="copyright-year">{currentYear}</span>
-				{profileConfig.name}. All Rights Reserved.
+				Copyright &copy; <span id="copyright-year">{currentYear}</span>
+				{profileConfig.name} All Rights Reserved
 				<span aria-hidden="true">/</span>
 				<a
 					class="transition link text-(--primary) font-medium"
@@ -59,29 +59,6 @@ try {
 					class="transition link text-(--primary) font-medium"
 					target="_blank"
 					href={url("sitemap-index.xml")}>Sitemap</a
-				>
-			</div>
-			<!--
-				注意：请勿随意修改或删除 "Powered by Astro & Firefly" 部分，这是对开源项目的尊重和支持。
-				需要增加底部内容时，直接编辑 src/config/FooterConfig.html 即可，不需要修改 Footer.astro。
-				------
-				Attention: Please do not modify or delete the "Powered by Astro & Firefly" section at will, 
-				as this is a sign of respect and support for open-source projects.
-				When you need to add the bottom content, 
-				you can directly edit src/config/FooterConfig.html without modifying Footer.astro.
-			-->
-			<div class="mx-0.5 my-2.5 flex gap-x-2 gap-y-2.5 justify-center flex-wrap">
-				<span>Powered by</span>
-				<a
-					class="transition link text-(--primary) font-medium"
-					target="_blank"
-					href="https://astro.build">Astro</a
-				>
-				<span aria-hidden="true">&</span>
-				<a
-					class="transition link text-(--primary) font-medium"
-					target="_blank"
-					href="https://github.com/CuteLeaf/Firefly">Firefly</a
 				>
 			</div>
 		</div>

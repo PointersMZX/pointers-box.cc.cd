@@ -8,7 +8,7 @@ export const spineModelConfig: SpineModelConfig = {
 	// Spine模型配置
 	model: {
 		// Spine模型文件路径
-		path: "/pio/models/spine/firefly/1310.json",
+		path: "",
 		// 模型缩放比例
 		scale: 1.0,
 		// X轴偏移
@@ -50,7 +50,7 @@ export const spineModelConfig: SpineModelConfig = {
 		],
 		// 点击时随机显示的文字消息
 		clickMessages: [
-			"你好呀！我是流萤~",
+			"",
 			"今天也要加油哦！✨",
 			"想要一起去看星空吗？🌟",
 			"记得要好好休息呢~",
@@ -82,7 +82,7 @@ export const spineModelConfig: SpineModelConfig = {
 	opacity: 1.0,
 };
 
-// Live2D 看板娘配置 (使用 l2d-widget 库，文档：https://l2d-widget.hacxy.cn)
+// Live2D 看板娘配置（使用 l2d-widget 库）
 export const live2dWidgetConfig: Live2DWidgetConfig = {
 	// Live2D 看板娘开关
 	enable: false,
@@ -90,7 +90,7 @@ export const live2dWidgetConfig: Live2DWidgetConfig = {
 	model: [
 		{
 			// Live2D模型本地文件路径
-			path: "/pio/models/live2d/snow_miku/model.json",
+			path: "",
 			// 动作声音音量 范围0~1，默认 0（静音）
 			volume: 0,
 			// 模型缩放比例
@@ -102,7 +102,7 @@ export const live2dWidgetConfig: Live2DWidgetConfig = {
 		},
 		{
 			// 外部直连模型
-			path: "https://model.hacxy.cn/cat-black/model.json",
+			path: "",
 			volume: 0,
 			scale: 1,
 			x: 0,

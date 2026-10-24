@@ -41,17 +41,28 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	},
 
 	// 本地音乐配置（当 mode 为 'local' 时使用）
-	// 1. 支持传入歌词文件的路径
-	// lrc: "/assets/music/lrc/使一颗心免于哀伤-哼唱.lrc",
-	// 2. 或者直接填入歌词字符串内容
-	// lrc: "[00:00.00]歌词内容...",
+	// 支持三首本地歌曲，封面统一使用 Pointers-BOX 图标，均无歌词
 	local: {
 		playlist: [
 			{
-				name: "使一颗心免于哀伤",
-				artist: "知更鸟 / HOYO-MiX / Chevy",
-				url: "/assets/music/使一颗心免于哀伤-哼唱.mp3",
-				cover: "/assets/music/cover/109951169585655912.webp",
+				name: "Pointers-BOX_v2.4.0主题曲",
+				artist: "Pointers-BOX",
+				url: encodeURI("/assets/music/开往春天的地铁 - 沈奕秋.mp3"),
+				cover: "/assets/music/cover/pointers-box.png",
+				lrc: "",
+			},
+			{
+				name: "Pointers-BOX_v2.0.0主题曲",
+				artist: "Pointers-BOX",
+				url: encodeURI("/assets/music/Masquerade (Inst.) - Lindsey Stirling.mp3"),
+				cover: "/assets/music/cover/pointers-box.png",
+				lrc: "",
+			},
+			{
+				name: "Pointers-BOX主题曲-万鬼同行",
+				artist: "Pointers-BOX",
+				url: encodeURI("/assets/music/无人区玫瑰 - 一颗狼星.mp3"),
+				cover: "/assets/music/cover/pointers-box.png",
 				lrc: "",
 			},
 		],
