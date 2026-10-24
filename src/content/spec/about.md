@@ -1,27 +1,23 @@
-# 关于我 / About Me
+# 关于 Pointers-BOX
 
-你好！我是 **夏叶** ，一个在数字世界中默默无闻的一片叶子。
+你好！我是 **Pointers-BOX**，由独立开发者极星（Pointers）自主开发的资源分享平台。
 
-## 🛠️ 关于本站
+## 关于平台
 
-这个网站使用 **Astro** 框架构建，采用了 [Firefly](https://github.com/CuteLeaf/Firefly) 模板，Firefly 是基于 [Fuwari](https://github.com/saicaca/fuwari) 的二次开发。
+Pointers-BOX 由极星（Pointers）自主开发，提供亲测可用的资源链接。所有资源由作者亲自测试，无任何风险且完全免费，请放心使用。
 
-**Firefly** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
+平台提供：
 
+- **资源聚合**：常用可用的资源链接，随版本更新持续维护
+- **分享与领取**：通过分享链接把资源发给朋友，对方在平台内一键领取
+- **多端支持**：Windows 桌面端与 Android 移动端双端可用
 
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
+## 下载与支持
 
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
-
-**⭐Firefly开源地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)** 
-
-**⭐Fuwari开源地址：[https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
-
-::github{repo="CuteLeaf/Firefly"}
-
-::github{repo="saicaca/fuwari"}
+- **下载 Pointers-BOX**：站点顶部导航栏「下载」入口（GitHub / Gitee / 蓝奏云三个渠道）
+- **社区交流**：[官方QQ社区群](https://qm.qq.com/q/DGf5XI9jgW)
+- **问题反馈**：应用内「设置 → 问题反馈」
 
 ---
 
-*感谢你的来访！希望在这里能找到对你有用的内容！*
-
+*感谢你的来访！祝大家资源自由，天天开心。*
