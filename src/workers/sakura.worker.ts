@@ -129,7 +129,7 @@ class Sakura {
 
 	update() {
 		this.x = this.fn.x(this.x, this.y);
-		// 修复原实现笔误:第二参数应为 this.x(原 fuwari 写法)
+		// 修复原实现笔误:第二参数应为 this.x
 		this.y = this.fn.y(this.x, this.y);
 		this.r = this.fn.r(this.r);
 		this.a = this.fn.a(this.a);

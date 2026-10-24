@@ -1,7 +1,6 @@
 import { h } from "hastscript";
 import { visit } from "unist-util-visit";
 
-// 来自霞葉： https://kasuha.com/posts/fuwari-enhance-ep1/
 
 /**
  * 加密 mailto 链接以保护邮箱地址免受爬虫抓取的 rehype 插件

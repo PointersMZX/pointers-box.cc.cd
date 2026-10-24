@@ -85,8 +85,8 @@ export const fontsList: FontDefinition[] = [
 
 // ─── 字体选择与区域覆盖 ─────────────────────────────────────
 export const fontConfig: FontSelectionConfig = {
-	// 是否启用自定义字体功能
-	enable: true,
+	// 是否启用自定义字体功能（关闭后全站走系统字体，构建无需联网拉取字体）
+	enable: false,
 	// 当前选择的字体 CSS 变量名（对应上方 fonts 中的 cssVariable）
 	// 使用 "system" 表示系统字体（不加载任何自定义字体）
 	selected: ["system"],
