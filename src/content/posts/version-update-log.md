@@ -5,6 +5,7 @@ category: "Pointers-BOX"
 tags:
   - B
 pinned: true
+comment: false
 description: "Pointers-BOX 各版本更新记录，从 v2.2.0 到 v2.4.0。"
 draft: false
 ---

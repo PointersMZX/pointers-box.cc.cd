@@ -197,8 +197,8 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 		{
 			// 组件类型：广告栏组件
 			type: "advertisement",
-			// 是否启用该组件（配置单第99行"广告不开启"，保持关闭；文案已备好，改 true 即显示）
-			enable: false,
+			// 是否启用该组件（平台公告栏：资源安全说明+QQ群入口，非商家广告，按用户确认开启）
+			enable: true,
 			// 是否显示组件标题
 			showTitle: false,
 			// 组件位置

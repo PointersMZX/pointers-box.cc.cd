@@ -25,8 +25,12 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	// 留言板
 	links.push(LinkPresets.Guestbook);
 
-	// 关于
-	links.push(LinkPresets.About);
+	// 关于（本站为 Pointers-BOX 官方站点，非个人博客，故不用默认「关于我」）
+	links.push({
+		name: "关于 Pointers-BOX",
+		url: "/about/",
+		icon: "material-symbols:person",
+	});
 
 	// 下载（外部链接，子菜单为三个渠道）
 	links.push({

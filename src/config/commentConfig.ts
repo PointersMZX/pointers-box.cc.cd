@@ -2,7 +2,8 @@ import type { CommentConfig } from "../types/commentConfig";
 
 export const commentConfig: CommentConfig = {
 	// 评论系统类型: none, twikoo, waline, giscus, disqus, artalk，默认为none，即不启用评论系统
-	type: "none",
+	// 仅留言板启用；文章页在 front-matter 单独关闭章评（comment: false）
+	type: "artalk",
 
 	//twikoo评论系统配置
 	twikoo: {
@@ -43,8 +44,8 @@ export const commentConfig: CommentConfig = {
 
 	// artalk评论系统配置
 	artalk: {
-		// artalk后端程序 API 地址
-		server: "https://artalk.example.com/",
+		// artalk后端程序 API 地址（实例部署到虚拟主机后，把这里改成实际 API 地址）
+		server: "https://www.pointers-box.cc.cd/artalk/",
 		// 设置 Artalk 语言
 		locale: "zh-CN",
 		// 是否启用文章访问量统计功能
