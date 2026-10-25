@@ -14,9 +14,8 @@ Pointers-BOX 由极星（Pointers）自主开发，提供亲测可用的资源�
 
 ## 下载与支持
 
-- **下载 Pointers-BOX**：站点顶部导航栏「下载」入口（GitHub / Gitee / 蓝奏云三个渠道）
-- **社区交流**：[官方QQ社区群](https://qm.qq.com/q/DGf5XI9jgW)
-- **问题反馈**：应用内「设置 → 问题反馈」
+- **下载 Pointers-BOX**：站点顶部导航栏「下载」入口（官网直装 / GitHub / Gitee / 蓝奏云）
+- **社区交流 / 问题反馈**：[官方QQ社区群](https://qm.qq.com/q/DGf5XI9jgW)
 
 ---
 

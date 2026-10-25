@@ -45,10 +45,10 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			showOnPostPage: true,
 		},
 		{
-			// 组件类型：公告组件
+			// 组件类型：公告组件（模板示例公告，已确认关闭）
 			type: "announcement",
 			// 是否启用该组件
-			enable: true,
+			enable: false,
 			// 组件位置
 			position: "top",
 			// 是否在文章详情页显示
@@ -92,6 +92,35 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			specificConfig: {
 				// 折叠阈值：当标签数量超过>10个时自动折叠
 				collapseThreshold: 10,
+			},
+		},
+		{
+			// 组件类型：广告栏组件
+			type: "advertisement",
+			// 是否启用该组件（平台公告栏：资源安全说明+QQ群入口，非商家广告，按用户确认开启）
+			enable: true,
+			// 是否显示组件标题
+			showTitle: false,
+			// 组件位置
+			position: "sticky",
+			// 是否在文章详情页显示
+			showOnPostPage: true,
+			// 组件专属配置（广告内容直接在此配置）
+			specificConfig: {
+				ad: {
+					title: "Pointers-BOX",
+					content:
+						"所有资源由作者亲自测试，无任何风险且完全免费，请放心使用，祝大家资源自由，天天开心。",
+					link: {
+						text: "官方QQ社区群",
+						url: "https://qm.qq.com/q/DGf5XI9jgW",
+						external: true,
+					},
+					// 是否允许关闭广告
+					closable: false,
+					// 显示次数限制，-1为无限制
+					displayCount: -1,
+				},
 			},
 		},
 	],
@@ -194,35 +223,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 				},
 			},
 		},
-		{
-			// 组件类型：广告栏组件
-			type: "advertisement",
-			// 是否启用该组件（平台公告栏：资源安全说明+QQ群入口，非商家广告，按用户确认开启）
-			enable: true,
-			// 是否显示组件标题
-			showTitle: false,
-			// 组件位置
-			position: "sticky",
-			// 是否在文章详情页显示
-			showOnPostPage: true,
-			// 组件专属配置（广告内容直接在此配置）
-			specificConfig: {
-				ad: {
-					title: "Pointers-BOX",
-					content:
-						"所有资源由作者亲自测试，无任何风险且完全免费，请放心使用，祝大家资源自由，天天开心。",
-					link: {
-						text: "官方QQ社区群",
-						url: "https://qm.qq.com/q/DGf5XI9jgW",
-						external: true,
-					},
-					// 是否允许关闭广告
-					closable: false,
-					// 显示次数限制，-1为无限制
-					displayCount: -1,
-				},
-			},
-		},
 	],
 
 	// 移动端底部组件配置列表
@@ -237,10 +237,10 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			showOnPostPage: true,
 		},
 		{
-			// 组件类型：公告组件
+			// 组件类型：公告组件（模板示例公告，已确认关闭）
 			type: "announcement",
 			// 是否启用该组件
-			enable: true,
+			enable: false,
 			// 是否在文章详情页显示
 			showOnPostPage: true,
 		},
