@@ -61,9 +61,11 @@ const codeFontFamily = codeFontVar
 ---
 
 <!-- Astro Font API: 自动下载、缓存并生成优化的 @font-face -->
+<!-- enable=false 时 astro 生成的 CssVariable 类型退化为 never，双重断言绕过；
+     运行时 allCssVars 为空集，该 map 不会渲染任何 <Font/> -->
 {Array.from(allCssVars).map((cssVar) => (
   <Font
-    cssVariable={cssVar as any}
+    cssVariable={cssVar as unknown as import("astro:assets").CssVariable}
     preload={selectedFontVars.includes(cssVar)}
   />
 ))}

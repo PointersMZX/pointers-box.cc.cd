@@ -551,6 +551,7 @@ const viewConfigStr = JSON.stringify({
         });
 
         on('fm:time', function (e) {
+            if (isSeeking) return; // 拖动期间以用户指针位置为准，避免 timeupdate 回写打架
             var d = e.detail;
             ui.progressBar.style.width = d.progress + '%';
             ui.progressThumb.style.left = d.progress + '%';
@@ -593,12 +594,40 @@ const viewConfigStr = JSON.stringify({
             mgr.setVolume(val);
         });
 
-        ui.progressContainer.addEventListener('click', function (e) {
+        // ── 进度条跳转：点击 + 拖动（pointer 事件，触屏/鼠标通用）────────
+        var isSeeking = false;
+        function progressFromEvent(e) {
             var rect = ui.progressContainer.getBoundingClientRect();
-            var clickX = e.clientX - rect.left;
-            var percent = Math.min(Math.max(clickX / rect.width, 0), 1);
-            mgr.seek(percent);
+            return Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+        }
+        function applyProgressUI(pct) {
+            ui.progressBar.style.width = pct * 100 + '%';
+            ui.progressThumb.style.left = pct * 100 + '%';
+            ui.progressContainer.setAttribute('aria-valuenow', Math.round(pct * 100).toString());
+        }
+        ui.progressContainer.addEventListener('pointerdown', function (e) {
+            e.preventDefault();
+            isSeeking = true;
+            try { ui.progressContainer.setPointerCapture(e.pointerId); } catch (_) {}
+            var p = progressFromEvent(e);
+            applyProgressUI(p);
+            mgr.seek(p);
         });
+        ui.progressContainer.addEventListener('pointermove', function (e) {
+            if (!isSeeking) return;
+            var p = progressFromEvent(e);
+            applyProgressUI(p);
+            mgr.seek(p);
+        });
+        function endSeek(e) {
+            if (!isSeeking) return;
+            isSeeking = false;
+            var p = progressFromEvent(e);
+            applyProgressUI(p);
+            mgr.seek(p);
+        }
+        ui.progressContainer.addEventListener('pointerup', endSeek);
+        ui.progressContainer.addEventListener('pointercancel', endSeek);
 
         // ── Drawer logic (local state) ───────────────────────────
         ui.btnLrc.addEventListener('click', function () {

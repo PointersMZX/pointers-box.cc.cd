@@ -331,13 +331,39 @@ const managerConfigStr = JSON.stringify({
         emit('fm:volume', { volume: state.volume, isMuted: state.isMuted });
     }
 
+    // 元数据未加载（本地模式 preload=none，未播放过的曲目）时记录待应用的 seek，
+    // 触发一次 audio.load() 取回 metadata，loadedmetadata 事件到达后再真正定位
+    var pendingSeek = { time: null, percent: null };
+
+    function flushPendingSeek() {
+        if (pendingSeek.time != null) {
+            audio.currentTime = Math.max(0, Math.min(pendingSeek.time, audio.duration || pendingSeek.time));
+            pendingSeek.time = null;
+        }
+        if (pendingSeek.percent != null) {
+            audio.currentTime = Math.max(0, Math.min(1, pendingSeek.percent)) * (audio.duration || 0);
+            pendingSeek.percent = null;
+        }
+    }
+
     function seek(percent) {
-        if (!audio.duration) return;
-        audio.currentTime = Math.max(0, Math.min(1, percent)) * audio.duration;
+        percent = Math.max(0, Math.min(1, percent));
+        if (isNaN(audio.duration) || !audio.duration) {
+            pendingSeek.percent = percent;
+            pendingSeek.time = null;
+            if (audio.src && audio.networkState === 0) audio.load();
+            return;
+        }
+        audio.currentTime = percent * audio.duration;
     }
 
     function seekToTime(time) {
-        if (!audio.duration) return;
+        if (isNaN(audio.duration) || !audio.duration) {
+            pendingSeek.time = Math.max(0, time);
+            pendingSeek.percent = null;
+            if (audio.src && audio.networkState === 0) audio.load();
+            return;
+        }
         audio.currentTime = Math.max(0, Math.min(time, audio.duration));
     }
 
@@ -350,6 +376,10 @@ const managerConfigStr = JSON.stringify({
     }
 
     // ── Audio events → broadcast ─────────────────────────────
+    audio.addEventListener('loadedmetadata', function () {
+        flushPendingSeek();
+    });
+
     audio.addEventListener('timeupdate', function () {
         if (isNaN(audio.duration)) return;
         var ct = audio.currentTime;
