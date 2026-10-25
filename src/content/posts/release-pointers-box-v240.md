@@ -25,8 +25,12 @@ Pointers-BOX v2.4.0 已正式发布。这一版围绕「分享」和「资源安
 
 ## 下载
 
-- 官网直装（Windows 常规版，Win10 / Win11）：[Pointers-BOX_Setup_v2.4.0 x64.exe](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_Setup_v2.4.0%20x64.exe)
-- 官网直装（Windows 7 兼容版）：[Pointers-BOX_Setup_v2.4.0_Windows7 x64.exe](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_Setup_v2.4.0_Windows7%20x64.exe)
+- 官网直装：
+  - Windows 常规版安装程序（Win10 / Win11）：[Pointers-BOX_Setup_v2.4.0 x64.exe](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_Setup_v2.4.0%20x64.exe)
+  - Windows 7 兼容版安装程序：[Pointers-BOX_Setup_v2.4.0_Windows7 x64.exe](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_Setup_v2.4.0_Windows7%20x64.exe)
+  - Windows 常规版便携版（免安装，解压即用）：[Pointers-BOX_v2.4.0_x64_Portable.7z](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_v2.4.0_x64_Portable.7z)
+  - Windows 7 便携版（免安装，解压即用）：[Pointers-BOX_v2.4.0_win7_Portable.7z](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_v2.4.0_win7_Portable.7z)
+  - 安卓版：[Pointers-BOX_v2.4.0.apk](https://api.pointers-box.cc.cd/Download/Pointers-BOX/Pointers-BOX_v2.4.0.apk)
 - GitHub：<https://github.com/PointersMZX/Pointers-BOX/releases>
 - Gitee：<https://gitee.com/PointersMZX/Pointers-BOX/releases>
 - 蓝奏云：<https://pointers.lanzoum.com/b01d77ya8h>
