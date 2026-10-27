@@ -5,7 +5,7 @@ import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
 import DisplaySettings from "@/components/controls/DisplaySettingsIntegrated.svelte";
 import LightDarkSwitch from "@/components/controls/LightDarkSwitch.svelte";
-import Search from "@/components/controls/Search.svelte";
+// import Search from "@/components/controls/Search.svelte"; // 导航搜索已关闭
 import MusicPlayer from "@/components/features/MusicPlayer.astro";
 import {
 	backgroundWallpaper,
@@ -201,9 +201,12 @@ const logoVariants = await Promise.all(
             </div>
             <div class="flex col-start-3 justify-self-end">
                 <!--<SearchPanel client:load>-->
+                <!-- 导航搜索已关闭（/search/ 页面仍可通过 URL 访问） -->
+                <!--
                 <Search
                     client:load
                 />
+                -->
                 {musicPlayerConfig.showInNavbar && (
                     <button aria-label={i18n(I18nKey.music)} aria-controls="music-nav-panel" aria-expanded="false" class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="music-player-switch">
                         <Icon name="material-symbols:music-note-rounded" class="text-[1.25rem]"></Icon>
